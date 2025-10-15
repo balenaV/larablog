@@ -1,12 +1,4 @@
 <!doctype html>
-<!--
-* Tabler - Premium and Open Source dashboard template with responsive and high quality UI.
-* @version 1.4.0
-* @link https://tabler.io
-* Copyright 2018-2025 The Tabler Authors
-* Copyright 2018-2025 codecalm.net Paweł Kuna
-* Licensed under MIT (https://github.com/tabler/tabler/blob/master/LICENSE)
--->
 <html lang="en">
 
 <head>
@@ -38,7 +30,7 @@
                     }, u.people.toString = function() {
                         return u.toString(1) + ".people (stub)"
                     }, o =
-                    "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug"
+                    "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opt_in_capturing has_opt_ed_out_capturing clear_opt_in_out_capturing debug"
                     .split(" "), n = 0; n < o.length; n++) g(u, o[n]);
                 e._i.push([i, s, a])
             }, e.__SV = 1)
@@ -85,46 +77,35 @@
     <meta property="og:url" content="https://preview.tabler.io/static/og.png" />
     <meta property="og:description"
         content="Tabler is packed with beautifully crafted components and powerful features. Jump in and start building a stunning dashboard — all for free!" />
-    <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="/back/dist/css/tabler.min.css?1759774799" rel="stylesheet"
-        integrity="sha384-KSBcNt/Mulg3JQzroX3d1zEP/Tc56uS+xE5k+uXt33zVlRwz1j7BQp4eRUH5P+X4" />
-    <!-- END GLOBAL MANDATORY STYLES -->
-    <!-- BEGIN PLUGINS STYLES -->
+        integrity="sha384-NQprZO9sxgYFNwrR/4yMmeckxV8ebqfqUCMBLk+/jbNn6m+Nf0G5PLD5+qyFFZDA" />
     <link href="/back/dist/css/tabler-flags.min.css?1759774799" rel="stylesheet"
-        integrity="sha384-fStl5MKxnUStSlpPiHGSFmUTTzr2KEY7jtgmvTswVDaQJ+sLbmEF+26m57M2sbCm" />
+        integrity="sha384-hJ/8SQ1SWauMdNsuxp+N2G/2fl/KCfQalQIqwSAIhAtDg4kIfzGBzWa2DpEZ+sNN" />
     <link href="/back/dist/css/tabler-socials.min.css?1759774799" rel="stylesheet"
-        integrity="sha384-rYtfgzcCz11iyODxSKx70JwR+bSIYiIcjSzvRMppIC/s3uSfW787ZBJpOI9mk2VD" />
+        integrity="sha384-6ZFjebY7ZBhNuAk8uyXLCv26AdsmPUK8CwlWQrKqsCAe4OxXTvNPtN0lrVs1hR6c" />
     <link href="/back/dist/css/tabler-payments.min.css?1759774799" rel="stylesheet"
-        integrity="sha384-ZRk1rNf2hqzIWoHspDzfWz8bKW1dr1odUHzmItwuijP60huklItYuva1cveYhRs5" />
+        integrity="sha384-ePuxWlZXE74SWrWwAm8T+21tp1AR0ro901FG63G27UFyBT8GJCZCNwxcfwQkRzpd" />
     <link href="/back/dist/css/tabler-vendors.min.css?1759774799" rel="stylesheet"
-        integrity="sha384-CW4ecnQUl53vx8YMR5fr7mJTTQqoFz5pBEM2GoWprNI+H/t+WG6bosZLrQMdnbCh" />
+        integrity="sha384-PVpcF20D+pz5Zpjktqco4hMuqKNNBmdur4I+ZSZfeDfT6XCcxUFlwG6U0bhlrOLs" />
     <link href="/back/dist/css/tabler-marketing.min.css?1759774799" rel="stylesheet"
-        integrity="sha384-IILX0Nea/+/hbVhEsrQ/djsqtSJmb4CM9hPzWd7Yh8hzbyYp4N/4hWMQL5kIPEuZ" />
+        integrity="sha384-dUr0NA/fWvvkD2c7C0bykpDw46orc0Z8QXGFnTPZ1HHFDJ0JLGSJe6YQMMhAwZKc" />
     <link href="/back/dist/css/tabler-themes.min.css?1759774799" rel="stylesheet"
-        integrity="sha384-o3qxqNUMd6NW7wethAfo4ur0TF8cgmbdTRrUHwryoxEpy3DNmt5MWoCHRlJlX/zD" />
-    <!-- END PLUGINS STYLES -->
-    <!-- BEGIN DEMO STYLES -->
+        integrity="sha384-GM5GVjWc7Y8sg2SO8td7etwGg0mOU7r18rm2IswALnNQK7+NWx7ty7m/4b6vcuJY" />
     <link href="/back/preview/css/demo.min.css?1759774799" rel="stylesheet"
-        integrity="sha384-BUDq2P684xwRBf0GDlySvob+KJg4ko8y2K7njgvYBscmEuqoVVqJ75zcTDozwkFA" />
+        integrity="sha384-gNmdq2OmsQ4J5xrePDgbudHSf08NS9iCTBUEJQEbyfebkvJB1fkIhQnVc/BPBuIq" />
     @stack('stylesheets')
-    <!-- END DEMO STYLES -->
-    <!-- BEGIN CUSTOM FONT -->
     <style>
         @import url("https://rsms.me/inter/inter.css");
     </style>
-    <!-- END CUSTOM FONT -->
 </head>
 
 <body>
-    <!-- BEGIN GLOBAL THEME SCRIPT -->
     <script src="/back/dist/js/tabler-theme.min.js?1759774799"
-        integrity="sha384-3Z3TIkq5YSKOncCfiURX/S03AUHfI0nVzd39uRc9KLhtLi7M228qgWBjnRXwt2j0"></script>
-    <!-- END GLOBAL THEME SCRIPT -->
+        integrity="sha384-Zjn8Sup0Ro1lGefRJzsRoThr6fhozxXw9Ni5yrPYnDLDlK0R/JydRAg1QS8CY803"></script>
     @yield('content')
     <div class="settings">
         <a href="#" class="btn btn-floating btn-icon btn-primary" data-bs-toggle="offcanvas"
             data-bs-target="#offcanvasSettings" aria-controls="offcanvasSettings" aria-label="Theme Settings">
-            <!-- Download SVG icon from http://tabler.io/icons/icon/brush -->
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                 class="icon icon-1">
@@ -367,7 +348,6 @@
                 </div>
                 <div class="mt-auto space-y">
                     <button type="button" class="btn w-100" id="reset-changes">
-                        <!-- Download SVG icon from http://tabler.io/icons/icon/rotate -->
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                             fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                             stroke-linejoin="round" class="icon icon-1">
@@ -380,15 +360,10 @@
             </div>
         </form>
     </div>
-    <!-- BEGIN GLOBAL MANDATORY SCRIPTS -->
     <script src="/back/dist/js/tabler.min.js?1759774800" defer
-        integrity="sha384-PRkENR4f5wQma0mCHb6RLYzjdNtqhICPI0A0k27raTkeKg17hM+tNMvCx1ZiwAQ7"></script>
-    <!-- END GLOBAL MANDATORY SCRIPTS -->
-    <!-- BEGIN DEMO SCRIPTS -->
+        integrity="sha384-unIRjhtVMnLioKaEGLfUG+RWslRThe9Lztm6DkzYu0aXPlF1nuedHWB9y5/ief1u"></script>
     <script src="/back/preview/js/demo.min.js?1759774800" defer></script>
-    <!-- END DEMO SCRIPTS -->
     <script src="https://scripts.tabler.io/banner.js" defer data-tblr-ref="tabler-preview-top-banner"></script>
-    <!-- BEGIN PAGE SCRIPTS -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var themeConfig = {
@@ -441,7 +416,6 @@
         });
     </script>
     @stack('scripts')
-    <!-- END PAGE SCRIPTS -->
 </body>
 
 </html>
