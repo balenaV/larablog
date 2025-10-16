@@ -94,6 +94,7 @@
     <link href="/back/preview/css/demo.min.css?1759774799" rel="stylesheet"
         integrity="sha384-gNmdq2OmsQ4J5xrePDgbudHSf08NS9iCTBUEJQEbyfebkvJB1fkIhQnVc/BPBuIq" />
     @stack('stylesheets')
+    @livewireStyles
     <style>
         @import url("https://rsms.me/inter/inter.css");
     </style>
@@ -416,6 +417,7 @@
         });
     </script>
     @stack('scripts')
+    @livewireScripts
 </body>
 
 </html>

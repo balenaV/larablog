@@ -24,5 +24,5 @@ Route::prefix('author')->name('author.')->group(function () {
         Route::view('/forgot-password', 'back.pages.auth.forgot')->name('forgot-password');
     });
 
-    Route::get('/home', [AuthorController::class, 'index'])->name('nome');
+    Route::get('/home', [AuthorController::class, 'index'])->name('home');
 });

@@ -111,6 +111,7 @@
         integrity="sha384-gNmdq2OmsQ4J5xrePDgbudHSf08NS9iCTBUEJQEbyfebkvJB1fkIhQnVc/BPBuIq" />
     <!-- END DEMO STYLES -->
     @stack('stylesheets')
+    @livewireStyles
     <!-- BEGIN CUSTOM FONT -->
     <style>
         @import url("https://rsms.me/inter/inter.css");
@@ -421,6 +422,7 @@
     <script src="https://scripts.tabler.io/banner.js" defer data-tblr-ref="tabler-preview-top-banner"></script>
 
     @stack('scripts')
+    @livewireScripts
     <!-- BEGIN PAGE SCRIPTS -->
     <script>
         document.addEventListener("DOMContentLoaded", function() {
