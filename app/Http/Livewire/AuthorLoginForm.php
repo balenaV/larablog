@@ -8,34 +8,57 @@ use Livewire\Component;
 class AuthorLoginForm extends Component
 {
 
-    public $email, $password;
+    public $login_id, $password;
 
     public function LoginHandler()
     {
-        $this->validate([
-            'email'    => 'required|email|exists:users,email',
-            'password' => 'required|min:5',
-        ], [
-            'email.required'   => 'Enter your email address',
-            'email.email'      => 'Invalid emaill address',
-            'email.exists'     => 'This email is not registered in database',
-            'password.requird' => 'Password is required',
-        ]);
-
-        $creds = ['email' => $this->email, 'password' => $this->password];
+        $fieldType = filter_var($this->login_id, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
+        $this->prepareValidate($fieldType);
+        $creds = [$fieldType => $this->login_id, 'password' => $this->password];
 
         if (Auth::guard('web')->attempt($creds)) {
-            $checkUser = User::where('email', $this->email)->first();
+            $checkUser = User::where($fieldType, $this->login_id)->first();
             if ($checkUser->blocked == 1) {
                 Auth::guard('web')->logout();
-                return redirect()->route('author.login')->with('fail', 'Your account had been blocked');
-
+                return redirect()->route('author.login')->with('fail', 'Your account have been blocked');
             } else {
                 return redirect()->route('author.home');
             }
         } else {
-            session->flash('fail', 'Incorret email or password');
+            session()->flash('fail', 'Incorret Email/Username or Password');
         }
+    }
+
+    /**
+     *  Auxilia à prepar a validação dos dados recebidos
+     *
+     * @param  string $fieldType => tipo de login recebido
+     * @return array -> array da validação dos dados
+     */
+    private function prepareValidate(string $fieldType): array
+    {
+        return $fieldType == 'email' ?
+
+        // Se for login por email
+        $this->validate([
+            'login_id' => 'required|email|exists:users,email',
+            'password' => 'required|min:5',
+        ], [
+            'login_id'          => 'Email or Username is required',
+            'login_id.email'    => 'Invalid email address',
+            'login_id.exists'   => 'Email is not registered',
+            'password.required' => 'Password is required',
+        ])
+        //Se for login por username
+            : $this->validate([
+            'login_id' => 'required|exists:users,username',
+            'password' => 'required|min:5',
+        ], [
+            'login_id'          => 'Email or Username is required',
+            'login_id.username' => 'Invalid username',
+            'login_id.exists'   => 'Username is not registered',
+            'password.required' => 'Password is required',
+        ]);
     }
     public function render()
     {
