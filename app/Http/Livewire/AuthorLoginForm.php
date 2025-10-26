@@ -30,9 +30,9 @@ class AuthorLoginForm extends Component
     }
 
     /**
-     *  Auxilia à prepar a validação dos dados recebidos
+     *  Auxilia à preparar a validação dos dados recebidos
      *
-     * @param  string $fieldType => tipo de login recebido
+     * @param  string $fieldType -> tipo de login recebido
      * @return array -> array da validação dos dados
      */
     private function prepareValidate(string $fieldType): array
