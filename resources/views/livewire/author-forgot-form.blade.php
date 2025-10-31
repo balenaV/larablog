@@ -1,7 +1,7 @@
 <div>
 
     @if (Session::get('success'))
-        <div class="alert alert-success">{{ Session::get('sucess') }}</div>
+        <div class="alert alert-success">{{ Session::get('success') }}</div>
     @endif
     <form class="card card-md" wire:submit.prevent="ForgotHandler()" method="post" autocomplete="off" novalidate="">
         <div class="card-body">
@@ -10,12 +10,10 @@
                 you.</p>
             <div class="mb-3">
                 <label class="form-label">Email address</label>
-                <input type="email" class="form-control" placeholder="Enter email">
-                <span class="text-danger">
-                    @error('email')
-                        {{ $message }}
-                    @enderror
-                </span>
+                <input type="email" wire:model="email" class="form-control" placeholder="Enter email">
+                @error('email')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
             <div class="form-footer">
                 <button type="submit" class="btn btn-primary btn-4 w-100">
