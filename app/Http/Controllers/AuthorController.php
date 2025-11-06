@@ -17,7 +17,7 @@ class AuthorController extends Controller
         return redirect()->route('author.login');
     }
 
-    public function ResetForm(Resquest $request, $token = null)
+    public function ResetForm(Request $request, $token = null)
     {
         $data = [
             'pageTitle' => 'Reset Password',

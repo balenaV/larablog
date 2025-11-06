@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Livewire;
 
+use App\Mail\AuthorResetPasswordMail;
 use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -25,42 +26,12 @@ class AuthorForgotForm extends Component
         $user = User::where('email', $this->email)->first();
         $link = route('author.reset-form', ['token' => $token, 'email' => $this->email]);
 
-        return dd($this->prepareBodyMessage($link));
-        $data = [
-            'name'         => $user->name,
-            'body_message' => $this->prepareBodyMessage($link),
-        ];
-
-        Mail::send('forgot-email-template', $data, function ($message) use ($user) {
-            $message->from('noreply@example.com', 'Larablog');
-            $message->to($user->email, $user->name)->subject('Reset Password');
-        });
+        Mail::to($user->email)->send(new AuthorResetPasswordMail($user, $link));
 
         $this->email = null;
         session()->flash('success', 'We have e-mailed your password reset link');
 
     }
-
-    /**
-     *  Prepara o corpo da mensagem de recuperação de senha do usuário
-     *
-     * @param mixed $link -> link para a recuperação da senha
-     * @return string -> corpo da mensagem de recuperação de senha
-     */
-    private function prepareBodyMessage($link): string
-    {
-        return "We are received a request to reset the password for <b>Larablog</b> account associated with " . $this->email . " <br>You can reset your password by clicking the button below <br> <a href='" . $link . "' target='_blank' style=" . $this->prepareBodyStyle() . ">Reset Password</a> <br> If you did not request for a password reset, please ignore this email";
-    }
-    /**
-     *  Prepara o estilo da mensagem de recuperação de senha do usuário
-     *
-     * @return array -> array da validação dos dados
-     */
-    private function prepareBodyStyle(): string
-    {
-        return "'#color:#FFF;border-color:#22bc66;border-style:solid;border-width:10px 10px; background-color:#22bc66;display:inline-block;text-decoration:none;border-radius:0.2rem;box-shadow:0 2px 3px rgba(0,0,0,0.16);-webkit-text-size-adjust:none;box-sizing:border-box'";
-    }
-
     /**
      *  Auxilia à preparar a validação dos dados recebidos
      *
